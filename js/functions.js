@@ -61,9 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function turnoYaLlamado(opcion) {
     // Obtener la lista de turnos llamados
     let turnosLlamados = cargarTurnosLlamados();
-
-    // Verificar si existe un turno llamado con el mismo prefijo
-    return turnosLlamados.some(turno => turno.numero.startsWith(opcion));
   }
 
   function mostrarTurnoAsignado(numero) {

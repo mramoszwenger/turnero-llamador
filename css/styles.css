@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap');
+
+.hidden {
+    display: none;
+  }
+
+/* Estilos generales */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.error-message,
+.success-message {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.error-message {
+  color: #dc3545;
+}
+
+.success-message {
+  color: #28a745;
+}
+
+.error {
+  border-color: #dc3545 !important;
+}
+
+/* Estilos panel de administrador */
+
+#interfazAdministrador {
+  text-align: center;
+}
+
+#interfazAdministrador button {
+  margin-bottom: 10px;
+}
+
+#listadoTurnos {
+  margin-top: 20px;
+}
+
+#listados {
+  display: flex;
+  justify-content: space-around;
+}
+
+#listados div {
+  width: 400px; /* Ancho listas */
+  margin-right: 10px; /* Ajusta el margen entre las listas */
+}

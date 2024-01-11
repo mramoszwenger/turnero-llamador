@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
   let turnosLlamadosList = document.getElementById('turnosLlamadosList');
   let usuarioLogueado = false; // Variable para verificar el inicio de sesión
 
+  // Objeto para almacenar contadores por tipo de turno
+  let contadorTurnos = {
+    'Consultorio': 0,
+    'Guardia': 0,
+    'Vacunatorio': 0,
+    'Otros': 0
+  };
+
   function cargarTurnos() {
     let turnosGuardados = localStorage.getItem('turnos');
     return turnosGuardados ? JSON.parse(turnosGuardados) : [];
@@ -40,8 +48,20 @@ document.addEventListener('DOMContentLoaded', function () {
       default:
         prefijo = 'O';
     }
-    let numero = turnos.length + 1;
+
+    // Incrementar el contador correspondiente al tipo de turno
+    contadorTurnos[opcion]++;
+    
+    let numero = contadorTurnos[opcion];
     return `${prefijo}${numero}`;
+  }
+
+  function reiniciarContador() {
+    // Limpiar la lista de turnos llamados al reiniciar el contador
+    turnosLlamadosList.innerHTML = '';
+    turnos = [];
+    guardarTurnos();
+    actualizarListadoTurnos();
   }
 
   function solicitarTurno(dni, opcion) {
@@ -268,12 +288,6 @@ document.addEventListener('DOMContentLoaded', function () {
         timer: 3000
       });
     }
-  }
-
-  function reiniciarContador() {
-    turnos = [];
-    guardarTurnos();
-    actualizarListadoTurnos();
   }
 
   function mostrarInterfazAdministrador() {

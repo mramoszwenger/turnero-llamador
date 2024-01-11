@@ -34,6 +34,10 @@ body {
   border-color: #dc3545 !important;
 }
 
+#enlaceAdmin {
+  margin-top: 250px;
+}
+
 /* Estilos panel de administrador */
 
 #interfazAdministrador {

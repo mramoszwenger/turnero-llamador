@@ -19,19 +19,24 @@
 
     <h1 class="mb-4">Sistema de Turnos</h1>
 
-    <div id="formularioDNI">
-
-      <label for="dniInput" class="form-label">Ingrese su DNI:</label>
-      <input type="text" id="dniInput" class="form-control" placeholder="DNI">
+    <div id="formularioDNI" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <label for="dniInput" class="form-label">Ingrese su DNI:</label>
+          <input type="text" id="dniInput" class="form-control" placeholder="DNI">
+        </div>
+        <div class="col-md-4">
+          <button id="btnAceptarDNI" class="btn btn-primary w-100 mt-2">Aceptar</button>
+        </div>
+      </div>
+    
       <div id="errorDNI" class="error-message hidden">Ingrese un DNI válido (8 dígitos numéricos).</div>
       <div id="successDNI" class="success-message hidden">DNI válido.</div>
-      <button id="btnAceptarDNI" class="btn btn-primary mt-2">Aceptar</button>
-
-      <div class="mt-3">
+    
+      <div class="fixed-bottom mb-3">
         <a href="#" id="enlacePanelAdmin">Panel Administrador</a>
       </div>
-
-    </div>
+    </div>    
 
     <div id="opcionesTurno" class="hidden mt-3">
 
